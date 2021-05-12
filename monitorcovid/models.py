@@ -6,4 +6,6 @@ class Contry(models.Model):
 
 
 class CovidData(models.Model):
+    contry = models.ForeignKey(Contry, on_delete=models.CASCADE)
     data = models.CharField(max_length=200)
+    
