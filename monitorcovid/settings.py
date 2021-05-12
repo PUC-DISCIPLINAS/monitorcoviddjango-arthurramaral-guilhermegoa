@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'monitorcovid.apps.MonitorCovidConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
