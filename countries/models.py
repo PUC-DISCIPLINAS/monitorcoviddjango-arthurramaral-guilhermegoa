@@ -3,11 +3,16 @@ from django.db import models
 # Create your models here.
 
 
-class CountryCovidData(models.Model):
-    pais = models.CharField(max_length=100)
+class Country(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
+
+class CovidData(models.Model):
     casos_confirmados = models.IntegerField(blank=True)
     mortes = models.IntegerField(blank=True)
     recuperados = models.IntegerField(blank=True)
-
-    def __str__(self):
-        return self.pais
+    data = models.DateTimeField(auto_now=True)
+    pais = models.ForeignKey("countries.Country", on_delete=models.CASCADE)

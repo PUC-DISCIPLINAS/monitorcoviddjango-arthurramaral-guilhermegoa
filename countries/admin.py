@@ -1,14 +1,22 @@
-from countries.models import CountryCovidData
+from countries.models import Country, CovidData
 from django.contrib import admin
 
 # Register your models here.
 
 
-class CountryCovidDataAdmin(admin.ModelAdmin):
+# class CountryAdmin(admin.ModelAdmin):
+#     list_display = ('nome')
+
+
+admin.site.register(Country)
+
+
+class CovidDataAdmin(admin.ModelAdmin):
     list_display = ('pais',
                     'casos_confirmados',
                     'mortes',
-                    'recuperados')
+                    'recuperados'
+                    )
 
 
-admin.site.register(CountryCovidData, CountryCovidDataAdmin)
+admin.site.register(CovidData, CovidDataAdmin)

@@ -1,10 +1,18 @@
-from countries.models import CountryCovidData
+from django.http.response import JsonResponse
+from countries.models import Country, CovidData
 from django.shortcuts import render
 
 # Create your views here.
 
 
 def dashboard(request):
-    covidData = CountryCovidData.objects.all()
+    countries = Country.objects.all()
 
-    return render(request, 'index.html', {'covidData': covidData})
+    return render(request, 'index.html', {'countries': countries})
+
+
+def countryCovidData(request, countryId):
+    covidData = list(CovidData.objects.filter(
+        pais_id=countryId).values())
+
+    return JsonResponse({'covidData': covidData})
