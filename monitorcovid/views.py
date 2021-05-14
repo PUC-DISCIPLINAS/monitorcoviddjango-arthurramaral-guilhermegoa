@@ -1,5 +1,5 @@
 from django.http.response import JsonResponse
-from countries.models import Country, CovidData
+from monitorcovid.models import Country, CovidData
 from django.shortcuts import render
 
 # Create your views here.

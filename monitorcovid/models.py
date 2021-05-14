@@ -15,4 +15,4 @@ class CovidData(models.Model):
     mortes = models.IntegerField(blank=True)
     recuperados = models.IntegerField(blank=True)
     data = models.DateTimeField(auto_now=True)
-    pais = models.ForeignKey("countries.Country", on_delete=models.CASCADE)
+    pais = models.ForeignKey("monitorcovid.Country", on_delete=models.CASCADE)

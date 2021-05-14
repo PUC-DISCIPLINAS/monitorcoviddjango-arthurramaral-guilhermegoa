@@ -1,4 +1,4 @@
-from countries.models import Country, CovidData
+from monitorcovid.models import Country, CovidData
 from django.core.management.base import BaseCommand
 import http.client
 import json
