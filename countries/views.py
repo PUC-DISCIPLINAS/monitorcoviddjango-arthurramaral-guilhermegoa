@@ -6,7 +6,7 @@ from django.shortcuts import render
 
 
 def dashboard(request):
-    countries = Country.objects.all()
+    countries = Country.objects.all().order_by('nome')
 
     return render(request, 'index.html', {'countries': countries})
 
