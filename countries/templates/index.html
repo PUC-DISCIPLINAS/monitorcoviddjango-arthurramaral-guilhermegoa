@@ -20,7 +20,7 @@
       <select name="country" id="country">
         <option value=""></option>
         {% for country in countries %}
-        <option value="{{ country.id }}">{{country.nome}}</option>
+        <option value="{{ country.id }}:{{country.nome}}">{{country.nome}}</option>
         {% endfor %}
       </select>
     </div>
@@ -28,6 +28,7 @@
     <table class="table-auto">
       <thead>
         <tr class="bg-blue-800 bg-opacity-50">
+          <th class="px-20 py-2">País</th>
           <th class="px-20 py-2">Casos confirmados</th>
           <th class="px-20 py-2">Mortes</th>
           <th class="px-20 py-2">Recuperados</th>
