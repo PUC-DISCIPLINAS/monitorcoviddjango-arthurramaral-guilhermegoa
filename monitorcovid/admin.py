@@ -1,4 +1,4 @@
-from countries.models import Country, CovidData
+from monitorcovid.models import Country, CovidData
 from django.contrib import admin
 
 # Register your models here.
